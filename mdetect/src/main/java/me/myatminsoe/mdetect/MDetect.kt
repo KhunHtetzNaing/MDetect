@@ -76,6 +76,7 @@ object MDetect {
     }
 
     fun isMyanmarText(inputString: String){
+	//Thanks MUA Web Converter: https://github.com/sanlinnaing/MUA-Web-Unicode-Converter
         val p1 = Pattern.compile("[\u1000-\u1021]")
         return if (p1.matcher(input).find()) {
             true
@@ -83,6 +84,7 @@ object MDetect {
     }
 
     fun isUnicodeText(input: String): Boolean {
+	//Thanks MUA Web Converter: https://github.com/sanlinnaing/MUA-Web-Unicode-Converter
         val p1 = Pattern.compile(zawgyiRegex())
         return if (p1.matcher(input).find()) {
             false
@@ -90,6 +92,7 @@ object MDetect {
     }
 
     private fun zawgyiRegex(){
+	//Thanks MUA Web Converter: https://github.com/sanlinnaing/MUA-Web-Unicode-Converter
         return "\u1031\u103b" // e+medial ra
         // beginning e or medial ra
         + "|^\u1031|^\u103b"
